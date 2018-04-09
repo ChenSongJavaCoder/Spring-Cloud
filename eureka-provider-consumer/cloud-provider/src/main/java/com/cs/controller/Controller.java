@@ -1,5 +1,6 @@
 package com.cs.controller;
 
+import com.cs.entity.Person;
 import com.cs.logs.BaseLogs;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +19,12 @@ public class Controller extends BaseLogs{
     public String hello(@RequestParam String name){
         String helloWorld = "helloWorld! by ";
         return helloWorld + name;
+    }
+
+
+    @RequestMapping("/findPerson")
+    public Person findPerson(){
+        return new Person("陈松",25,"男");
     }
 
 }

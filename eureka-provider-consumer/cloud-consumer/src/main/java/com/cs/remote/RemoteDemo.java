@@ -1,5 +1,6 @@
 package com.cs.remote;
 
+import com.cs.entity.Person;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,7 +13,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "cloud-provider")
 public interface RemoteDemo {
 
+    /**
+     * 1
+     * @param name
+     * @return
+     */
     @RequestMapping("/hello")
     String helloWorld(@RequestParam(value = "name") String name);
 
+    /**
+     * 2
+     * @return
+     */
+    @RequestMapping("/findPerson")
+    Person findPerson();
 }
