@@ -1,0 +1,21 @@
+spring:
+ application:
+  name: cloud-consumer
+
+server:
+ port: 7102
+
+eureka:
+ client:
+  service-url:
+   defaultZone: http://localhost:7100/eureka/
+
+
+ribbon:
+ eureka:
+  enabled: true
+
+feign:
+ httpclient:
+  connection-timeout: 1000
+
